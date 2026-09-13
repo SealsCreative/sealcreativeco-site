@@ -798,3 +798,248 @@ select {
     gap: 0.5rem;
   }
 }
+
+.about-hero {
+  padding: 9rem 0 7rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 0.7fr;
+  gap: 6rem;
+  align-items: end;
+}
+
+.about-hero h1 {
+  max-width: 900px;
+  margin-bottom: 0;
+}
+
+.about-hero h1 span {
+  color: var(--accent-red);
+}
+
+.about-hero-intro {
+  border-left: 1px solid var(--border);
+  padding-left: 2rem;
+}
+
+.about-hero-intro p {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.about-story {
+  padding: 8rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-story-alt {
+  background: var(--surface);
+}
+
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 5rem;
+}
+
+.about-story-marker span {
+  color: var(--accent-teal);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.75rem;
+}
+
+.about-story-marker p {
+  margin-top: 0.5rem;
+  color: var(--foreground);
+  font-size: 0.85rem;
+}
+
+.about-story-content {
+  max-width: 800px;
+}
+
+.about-story-content h2 {
+  margin-bottom: 2.5rem;
+}
+
+.about-story-content p {
+  max-width: 700px;
+  font-size: 1.1rem;
+}
+
+.about-story-content p:last-child {
+  margin-bottom: 0;
+}
+
+.about-philosophy {
+  padding: 9rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-philosophy-heading {
+  max-width: 850px;
+  margin-bottom: 5rem;
+}
+
+.about-philosophy-heading h2 span {
+  color: var(--accent-teal);
+}
+
+.about-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.about-values article {
+  padding: 2.5rem;
+}
+
+.about-values article + article {
+  border-left: 1px solid var(--border);
+}
+
+.about-values article > span {
+  display: block;
+  margin-bottom: 4rem;
+  color: var(--accent-pink);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.7rem;
+}
+
+.about-values h3 {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+
+.about-values p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+.about-personal {
+  padding: 9rem 0;
+  background: var(--accent-teal);
+  color: var(--foreground);
+}
+
+.about-personal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 7rem;
+}
+
+.about-personal .section-label {
+  color: var(--accent-pink);
+}
+
+.personal-heading h2 span {
+  color: var(--accent-pink);
+}
+
+.personal-content p {
+  color: var(--foreground);
+  font-size: 1.1rem;
+}
+
+.personal-interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+}
+
+.personal-interests span {
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgba(255, 236, 209, 0.55);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+.about-next {
+  padding: 10rem 0;
+}
+
+.about-next-inner {
+  max-width: 900px;
+  text-align: center;
+}
+
+.about-next h2 {
+  margin-bottom: 2rem;
+}
+
+.about-next h2 span {
+  color: var(--accent-red);
+}
+
+.about-next-inner > p:not(.section-label) {
+  max-width: 650px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+}
+
+.about-next-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .about-hero-grid,
+  .about-story-grid,
+  .about-personal-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-hero-intro {
+    max-width: 650px;
+  }
+
+  .about-values {
+    grid-template-columns: 1fr;
+  }
+
+  .about-values article + article {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .about-values article > span {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 6rem 0 5rem;
+  }
+
+  .about-story,
+  .about-philosophy,
+  .about-personal,
+  .about-next {
+    padding: 6rem 0;
+  }
+
+  .about-hero h1 {
+    font-size: clamp(3rem, 15vw, 5rem);
+  }
+
+  .about-hero-intro {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+    padding: 2rem 0 0;
+  }
+
+  .about-values article {
+    padding: 2rem 0;
+  }
+}
