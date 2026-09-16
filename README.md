@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Seal Creative Co.
 
-## Getting Started
+Seal Creative Co. is my professional web development portfolio and the foundation for my freelance web design and development work.
 
-First, run the development server:
+The site showcases my approach to building thoughtful, responsive web experiences that balance structure, usability, and personality.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+> Clean enough to make sense. Interesting enough to remember.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Status
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Currently in development**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The primary portfolio pages, design system, responsive navigation, and site-wide visual structure are complete.
 
-## Learn More
+Current development is moving into functionality, accessibility, portfolio case studies, and original project development.
 
-To learn more about Next.js, take a look at the following resources:
+## Current Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Home
+- About
+- Projects
+- Services
+- Resume
+- Contact
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Built With
 
-## Deploy on Vercel
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- HTML5
+- CSS3
+- Git
+- GitHub
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Design Direction
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Seal Creative Co. uses a **Structured + Moody** visual direction.
+
+The design combines:
+
+- Strong geometric layouts
+- Deliberate whitespace
+- Dark neutral surfaces
+- Selective color
+- Clear typography
+- Subtle interaction
+- Responsive design
+
+The goal is to create a portfolio that feels professional and organized while still having personality.
+
+## Color Palette
+
+| Color | Hex |
+| --- | --- |
+| Charcoal | `#292929` |
+| Red | `#D7263D` |
+| Teal | `#0B7A75` |
+| Blush Pink | `#F7B2BD` |
+| Cream | `#FFECD1` |
+
+## Portfolio Projects
+
+The Projects section is currently being prepared for five original portfolio projects.
+
+Planned project categories include:
+
+1. Creator Platform
+2. Studio Booking Application
+3. Local Events Application
+4. Small Business Website
+5. Productivity Dashboard
+
+These projects will be developed individually and expanded into full case studies as development continues.
+
+## Current Development Priorities
+
+Upcoming work includes:
+
+- Functional contact form
+- Downloadable resume
+- Project detail and case study pages
+- Original portfolio projects
+- Link and interaction testing
+- Accessibility improvements
+- Responsive refinement
+- SEO and metadata
+- Performance optimization
+- Production deployment
+
+## Development Workflow
+
+This project uses a branch-based Git workflow.
+
+```text
+feature branch
+      ↓
+     dev
+      ↓
+    main
