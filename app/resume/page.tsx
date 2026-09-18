@@ -43,7 +43,11 @@ export default function Resume() {
               and helping people.
             </p>
 
-            <a href="#resume-download" className="button button-primary">
+            <a
+              href="/Tiffany_Seals_Web_Developer_Resume.pdf"
+              download
+              className="button button-primary"
+            >
               Download resume
             </a>
           </div>
@@ -255,9 +259,13 @@ export default function Resume() {
             overview.
           </p>
 
-          <button className="button button-primary" type="button">
+          <a
+            href="/Tiffany_Seals_Web_Developer_Resume.pdf"
+            download
+            className="button button-primary"
+          >
             Download resume
-          </button>
+          </a>
         </div>
       </section>
     </>
