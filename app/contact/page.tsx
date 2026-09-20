@@ -1,4 +1,54 @@
+
+"use client";
+
+import { useState, type FormEvent } from "react";
+
 export default function Contact() {
+  const [submitting, setSubmitting] = useState(false);
+  const [status, setStatus] = useState("");
+  const [statusType, setStatusType] = useState<"success" | "error" | "">("");
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    if (submitting) {
+      return;
+    }
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    setSubmitting(true);
+    setStatus("");
+    setStatusType("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || "Your inquiry could not be sent.");
+      }
+
+      setStatus(result.message || "Your inquiry has been sent successfully!");
+      setStatusType("success");
+      form.reset();
+    } catch (error) {
+      setStatus(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again."
+      );
+      setStatusType("error");
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
   return (
     <>
       <section className="contact-hero">
@@ -65,7 +115,21 @@ export default function Contact() {
             </div>
           </div>
 
-          <form className="contact-form">
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <div
+              className="contact-honeypot"
+              aria-hidden="true"
+            >
+              <label htmlFor="website">Leave this field empty</label>
+              <input
+                id="website"
+                name="website"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
+
             <div className="contact-field">
               <label htmlFor="name">Your name</label>
               <input
@@ -73,6 +137,10 @@ export default function Contact() {
                 name="name"
                 type="text"
                 placeholder="What should I call you?"
+                autoComplete="name"
+                minLength={2}
+                maxLength={100}
+                required
               />
             </div>
 
@@ -83,12 +151,15 @@ export default function Contact() {
                 name="email"
                 type="email"
                 placeholder="you@example.com"
+                autoComplete="email"
+                maxLength={254}
+                required
               />
             </div>
 
             <div className="contact-field">
               <label htmlFor="inquiry">What can I help with?</label>
-              <select id="inquiry" name="inquiry" defaultValue="">
+              <select id="inquiry" name="inquiry" defaultValue="" required>
                 <option value="" disabled>
                   Choose one
                 </option>
@@ -103,7 +174,7 @@ export default function Contact() {
 
             <div className="contact-field">
               <label htmlFor="stage">Where are you in the process?</label>
-              <select id="stage" name="stage" defaultValue="">
+              <select id="stage" name="stage" defaultValue="" required>
                 <option value="" disabled>
                   Choose one
                 </option>
@@ -123,13 +194,30 @@ export default function Contact() {
                 id="message"
                 name="message"
                 rows={7}
+                minLength={10}
+                maxLength={5000}
+                required
                 placeholder="What are you working on? What do you need help with?"
               ></textarea>
             </div>
 
-            <button type="submit" className="button button-primary">
-              Send inquiry
+            <button
+              type="submit"
+              className="button button-primary"
+              disabled={submitting}
+            >
+              {submitting ? "Sending..." : "Send inquiry"}
             </button>
+
+            {status && (
+              <p
+                className={`contact-status contact-status-${statusType}`}
+                role={statusType === "error" ? "alert" : "status"}
+                aria-live="polite"
+              >
+                {status}
+              </p>
+            )}
           </form>
         </div>
       </section>
@@ -202,18 +290,18 @@ export default function Contact() {
 
       <section className="contact-closing">
         <div className="section-inner contact-closing-inner">
-            <p className="section-label">Seal Creative Co.</p>
+          <p className="section-label">Seal Creative Co.</p>
 
-            <h2>
-                Good things usually start
-                <span> with a conversation.</span>
-            </h2>
+          <h2>
+            Good things usually start
+            <span> with a conversation.</span>
+          </h2>
 
-            <a href="#contact-form" className="button button-primary">
-                Start a conversation
-            </a>
+          <a href="#contact-form" className="button button-primary">
+            Start a conversation
+          </a>
         </div>
-        </section>
+      </section>
     </>
   );
 }
