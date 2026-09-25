@@ -83,75 +83,37 @@ export default function Home() {
           <div className="section-heading">
             <div>
               <p className="section-label">Selected work</p>
-              <h2>Built with intention.</h2>
+              <h2>Good work takes a little time.</h2>
             </div>
 
             <Link href="/projects" className="text-link">
-              See all projects
+              View projects
             </Link>
           </div>
 
-          <div className="project-grid">
-            <article className="project-card project-card-pink">
-              <div className="project-visual">
-                <span className="project-number">01</span>
-                <div className="project-window">
-                  <div className="window-top">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
+          <div className="work-in-progress">
+            <div className="work-in-progress-number">01</div>
 
-                  <div className="window-content">
-                    <div className="window-line window-line-short"></div>
-                    <div className="window-heading"></div>
-                    <div className="window-line"></div>
-                    <div className="window-line window-line-medium"></div>
-                  </div>
-                </div>
-              </div>
+            <div className="work-in-progress-content">
+              <p className="section-label">Currently building</p>
 
-              <div className="project-info">
-                <p>Demo Concept</p>
-                <h3>Creator Platform</h3>
-                <span>React · Responsive UI · Front-End Development</span>
-              </div>
-            </article>
+              <h3>New projects are in the works.</h3>
 
-            <article className="project-card project-card-purple">
-              <div className="project-visual">
-                <span className="project-number">02</span>
+              <p>
+                I&apos;m building a collection of original projects that
+                showcase my approach to design, development, and
+                problem-solving. They&apos;ll be added here as they&apos;re
+                completed.
+              </p>
 
-                <div className="project-architecture">
-                  <div className="architecture-column"></div>
-                  <div className="architecture-column"></div>
-                  <div className="architecture-column"></div>
-                  <div className="architecture-column"></div>
-                </div>
-              </div>
+              <Link href="/projects" className="text-link">
+                Visit the projects page
+              </Link>
+            </div>
 
-              <div className="project-info">
-                <p>Demo Concept</p>
-                <h3>Studio Booking</h3>
-                <span>Next.js · UX Design · Application Development</span>
-              </div>
-            </article>
-
-            <article className="project-card project-card-red">
-              <div className="project-visual">
-                <span className="project-number">03</span>
-
-                <div className="project-circle">
-                  <div></div>
-                </div>
-              </div>
-
-              <div className="project-info">
-                <p>Demo Concept</p>
-                <h3>Local Events</h3>
-                <span>Full Stack · API Integration · Responsive Design</span>
-              </div>
-            </article>
+            <div className="work-in-progress-mark">
+              <span>S</span>
+            </div>
           </div>
         </div>
       </section>
