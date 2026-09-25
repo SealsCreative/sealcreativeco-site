@@ -394,55 +394,64 @@ select {
   font-size: 0.9rem;
 }
 
-.project-grid {
+.work-in-progress {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1.5rem;
-}
-
-.project-card {
+  grid-template-columns: auto 1fr auto;
+  align-items: stretch;
+  min-height: 320px;
   border: 1px solid var(--border);
   background: var(--surface);
   overflow: hidden;
-  transition:
-    transform 220ms ease,
-    border-color 220ms ease;
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
-  border-color: #6a6a6a;
+.work-in-progress-number {
+  padding: 2rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  border-right: 1px solid var(--border);
 }
 
-.project-card:nth-child(1) {
-  grid-column: span 7;
+.work-in-progress-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 680px;
+  padding: 4rem;
 }
 
-.project-card:nth-child(2) {
-  grid-column: span 5;
+.work-in-progress-content h3 {
+  margin: 0.75rem 0 1rem;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
 }
 
-.project-card:nth-child(3) {
-  grid-column: 4 / span 6;
+.work-in-progress-content > p:not(.section-label) {
+  max-width: 600px;
+  margin-bottom: 2rem;
+  color: var(--muted);
+  line-height: 1.7;
 }
 
-.project-visual {
-  min-height: 340px;
-  padding: 1.5rem;
-  position: relative;
-  overflow: hidden;
+.work-in-progress-content .text-link {
+  align-self: flex-start;
 }
 
-.project-card-pink .project-visual {
+.work-in-progress-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
   background: var(--accent-pink);
+  color: var(--background);
 }
 
-.project-card-purple .project-visual {
-  background: var(--accent-teal);
-}
-
-.project-card-red .project-visual {
-  background: var(--accent-red);
+.work-in-progress-mark span {
+  font-size: clamp(5rem, 10vw, 9rem);
+  font-weight: 700;
+  line-height: 1;
+  transform: rotate(-8deg);
 }
 
 .project-number {
